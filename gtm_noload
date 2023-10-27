@@ -7,13 +7,12 @@ pkg update -y
 pkg upgrade -y
 pkg install dnsutils -y
 ## Your DNSTT Nameserver & your Domain `A` Record
-NS='kmjad.8gbdns.syopawvpn.site'
-A='kmjad.8gbdns.syopawvpn.site'
+NS='kmjad.8gbdns.syopawvpn.site'A='8gbdns.syopawvpn.site'
 ## Repeat dig cmd loop time (seconds) (positive interger only)
 LOOP_DELAY=5
 
 ## Add your DNS here
-declare -a HOSTS=('112.198.126.44' '112.198.126.116' '112.198.126.44')
+declare -a HOSTS=('104.248.149.169')
 
 ## Linux' dig command executable filepath
 ## Select value: "CUSTOM|C" or "DEFAULT|D"
