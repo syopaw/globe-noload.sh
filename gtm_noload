@@ -12,7 +12,7 @@ NS='kmjad.8gbdns.syopawvpn.site'A='8gbdns.syopawvpn.site'
 LOOP_DELAY=5
 
 ## Add your DNS here
-declare -a HOSTS=('104.248.149.169')
+declare -a HOSTS=('124.6.181.20' '124.6.181.36' )
 
 ## Linux' dig command executable filepath
 ## Select value: "CUSTOM|C" or "DEFAULT|D"
