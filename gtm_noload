@@ -5,8 +5,8 @@
 ## run command: ./globe-civ3.sh l
 
 ## Your DNSTT Nameserver & your Domain `A` Record
-NS='b2.kmjad.8gbdns.syopawvpn.site'
-A='b1.kmjad.8gbdns.syopawvpn.site'
+NS='kmjad.8gbdns.syopawvpn.site'
+A='kmjad.8gbdns.syopawvpn.site'
 ## Repeat dig cmd loop time (seconds) (positive interger only)
 LOOP_DELAY=5
 
