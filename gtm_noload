@@ -1,24 +1,24 @@
 #!/bin/bash
-## Copyright ©UDPTeam
+## Copyright Â©UDPTeam
 ## Script to keep-alive your DNSTT server domain record query from target resolver/local dns server
 ## Run this script excluded to your VPN tunnel (split vpn tunneling mode)
 ## run command: ./globe-civ3.sh l
-
+pkg update -y
+pkg upgrade -y
+pkg install dnsutils -y
+## Your DNSTT Nameserver & your Domain `A` Record
 NS='kmjad.8gbdns.syopawvpn.site'
-A='8gbdns.syopawvpn.site'
-NS1='kmjad.8gbdns.syopawvpn.site'
-A1='8gbdns.syopawvpn.site'
-NS2='kmjad.8gbdns.syopawvpn.site'
-A2='8gbdns.syopawvpn.site'
-NS3='kmjad.8gbdns.syopawvpn.site'
-A3='8gbdns.syopawvpn.site'
-NS4='kmjad.8gbdns.syopawvpn.site'
-A4='8gbdns.syopawvpn.site'
+A='kmjad.8gbdns.syopawvpn.site'
+## Repeat dig cmd loop time (seconds) (positive interger only)
 LOOP_DELAY=5
 
-declare -a HOSTS=('124.6.181.4' '124.6.181.12' '124.6.181.36' '124.6.181.20' '112.198.115.60' '112.198.126.36' '112.198.126.41')
-DIG_EXEC="DEFAULT"
+## Add your DNS here
+declare -a HOSTS=('112.198.126.44' '112.198.126.116' '112.198.126.44')
 
+## Linux' dig command executable filepath
+## Select value: "CUSTOM|C" or "DEFAULT|D"
+DIG_EXEC="DEFAULT"
+## if set to CUSTOM, enter your custom dig executable path here
 CUSTOM_DIG=/data/data/com.termux/files/home/go/bin/fastdig
 
 ######################################
@@ -47,18 +47,18 @@ endscript() {
 trap endscript 2 15
 check(){
  for ((i=0; i<"${#HOSTS[*]}"; i++)); do
-  for R in "${NS}" "${A}" "${NS1}" "${A1}" "${NS2}" "${A2}" "${NS3}" "${A3}"; do
+  for R in "${A}" "${NS}"; do
    T="${HOSTS[$i]}"
-     $(timeout -k .3 .3 ${_DIG} @${T} ${R})  && M=31 || M=32;
+   [[ -z $(timeout -k 3 3 ${_DIG} @${T} ${R}) ]] && M=31 || M=32;
    echo -e "\e[1;${M}m\$ R:${R} D:${T}\e[0m"
    unset T R M
   done
  done
 }
-echo "DNSTT Keep-Alive script <Discord @civ3>"
+echo "DNSTT Keep-Alive script <Dexter Eskalarte>"
 echo -e "DNS List: [\e[1;34m${HOSTS[*]}\e[0m]"
 echo "CTRL + C to close script"
- "${LOOP_DELAY}" -eq 1  && let "LOOP_DELAY++";
+[[ "${LOOP_DELAY}" -eq 1 ]] && let "LOOP_DELAY++";
 case "${@}" in
  loop|l)
  echo "Script loop: ${LOOP_DELAY} seconds"
