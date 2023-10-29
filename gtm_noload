@@ -15,10 +15,6 @@
 ## Your DNSTT Nameserver & your Domain [ICODE]A[/ICODE] Record
 
 NS='jzuzd.gtm101.syopawvpn.site'
-NS1='jzuzd.gtm101.syopawvpn.site'
-NS2='jzuzd.gtm101.syopawvpn.site'
-NS3='jzuzd.gtm101.syopawvpn.site'
-NS4='jzuzd.gtm101.syopawvpn.site'
 A='gtm101.syopawvpn.site'
 
 ## Repeat dig cmd loop time (seconds) (positive interger only)
