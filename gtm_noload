@@ -15,7 +15,7 @@
 ## Your DNSTT Nameserver & your Domain [ICODE]A[/ICODE] Record
 
 NS='vrchp.8ssh.syopawvpn.site'
-A='vrchp.8ssh.syopawvpn.site'
+A='8ssh.syopawvpn.site'
 
 ## Repeat dig cmd loop time (seconds) (positive interger only)
 
